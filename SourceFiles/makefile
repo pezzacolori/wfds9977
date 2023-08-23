@@ -4,9 +4,14 @@
 # compile the 64 bit parallel version (MPI) of FDS under Linux using the Intel compilers type:
 #
 # make mpi_intel_linux_64
-#Boris Pezzatti: this script has been modify to compile for mpi_gnu_linux_64 with August 2023 version of gcc and gfortran
-#so you need to run 
+#
+#Boris Pezzatti: this script has been modified to compile for mpi_gnu_linux_64 with August 2023 version of gcc and gfortran
+#so you need to run in the SourceFiles folder
+#
 #make mpi_gnu_linux_64
+#
+#and you will get an executable named   
+#fds_mpi_gnu_linux_64
 
 # A make utility for windows may be downloaded from http://gnuwin32.sourceforge.net/packages/make.htm
 

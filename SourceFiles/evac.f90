@@ -12765,9 +12765,9 @@ CONTAINS
          END SELECT
          HR%FFIELD_NAME = TRIM(PNX%GRID_NAME)
          HR%I_FFIELD    = 0
-         Mesh2Loop: DO i = 1, NMESHES
-            IF ( EVACUATION_ONLY(I) .AND. TRIM(HR%FFIELD_NAME) == TRIM(MESH_NAME(i)) ) THEN
-               HR%I_FFIELD = i
+         Mesh2Loop: DO ii = 1, NMESHES
+            IF ( EVACUATION_ONLY(I) .AND. TRIM(HR%FFIELD_NAME) == TRIM(MESH_NAME(ii)) ) THEN
+               HR%I_FFIELD = ii
                EXIT Mesh2Loop
             END IF
          END DO Mesh2Loop
