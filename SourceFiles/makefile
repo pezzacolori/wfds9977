@@ -3,13 +3,17 @@
 # To use this makefile, select the appropriate compiler and OS from the list below. For example, to
 # compile the 64 bit parallel version (MPI) of FDS under Linux using the Intel compilers type:
 #
-# make intel_linux_mpi_64
+# make mpi_intel_linux_64
+#Boris Pezzatti: this script has been modify to compile for mpi_gnu_linux_64 with August 2023 version of gcc and gfortran
+#so you need to run 
+#make mpi_gnu_linux_64
 
 # A make utility for windows may be downloaded from http://gnuwin32.sourceforge.net/packages/make.htm
 
 # The variable VPATH defines where the source code is relative to the current directory
 
 VPATH = "./Source Files"
+#VPATH = "./"
 
 # Definition of the non-MPI or MPI object variables
 
@@ -489,7 +493,8 @@ xxxmpi_gnu_linux_64 : CCOMPL = mpicc
 xxxmpi_gnu_linux_64 : obj = fds_mpi_gnu_linux_64 
 xxxmpi_gnu_linux_64 : setup $(obj_mpi) 
 
-mpi_gnu_linux_64 : FFLAGS = -m64 -O2 -unroll
+mpi_gnu_linux_64 : FFLAGS = -m64 -O2 -unroll -fallow-argument-mismatch -ffree-line-length-512
+#-std=f2018
 mpi_gnu_linux_64 : CFLAGS = -m64 -O2 -unroll
 mpi_gnu_linux_64 : FCOMPL = mpif77
 mpi_gnu_linux_64 : CCOMPL = mpicc 
